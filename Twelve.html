@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用JavaScript代码改变字体大小</title>
+</head>
+<style>
+    font{
+
+    }
+</style>
+<body>
+<script>
+    function setBig() {
+        document.getElementById("text").style.fontSize = 20+"pt"
+
+    }
+    function setMid() {
+        document.getElementById("text").style.fontSize = 15+"pt"
+
+    }
+    function setSmall() {
+        document.getElementById("text").style.fontSize = 10+"pt"
+
+
+    }
+</script>
+     <h2 style="letter-spacing: 5px">用JavaScript代码改变字体大小</h2>
+     设置字体大小<font id="small" onclick="setSmall()">&nbsp;&nbsp;小&nbsp;&nbsp;</font>
+               <font id="mid" onclick="setMid()">中</font>
+               <font id="big" onclick="setBig()">&nbsp;&nbsp;大</font>
+     <div style="border: 1px solid #6b6dd6;width: 100%;height: 100px">
+         <p style="text-align: center" id="text">
+             <font color="red" style="letter-spacing: 5px; line-height: 25px ">
+                 &nbsp;&nbsp;&nbsp;&nbsp;JavaScript是一种能让你的网页更加生动活泼的程式语言，也是目前网页中设计中最容易学又方便的语言
+             </font>
+         </p>
+
+     </div>
+
+</body>
+</html>

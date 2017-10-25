@@ -3,32 +3,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>彩票福利投注助手</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            document.body.style.backgroundColor="#007735";
+        }
+        function clickSend() {
+            document.getElementById('edit').value =
+                (Math.round(Math.random()*30))+'  '+
+                (Math.round(Math.random()*30))+'  '+
+                (Math.round(Math.random()*30))+'  '+
+                (Math.round(Math.random()*30))+'  '+
+                (Math.round(Math.random()*30))+'  '+
+                (Math.round(Math.random()*30))+'  '+
+                (Math.round(Math.random()*30))+'  '
+        }
+
+        function clickClean() {
+            document.getElementById("edit").value = ""
+        }
+    </script>
 </head>
 <body>
-<script type="javascript">
-    function clickSend() {
-        
-    }
-</script>
-
-<form>
-    <div>
-        彩票号码
-        <input type="text" id="edit_show">
-        <input type="button" value="投注" onclick="1
-            document.getElementById('edit_show').value=   (Math.round(Math.random()*30))+'  '+
-                                                          (Math.round(Math.random()*30))+'  '+
-                                                          (Math.round(Math.random()*30))+'  '+
-                                                          (Math.round(Math.random()*30))+'  '+
-                                                          (Math.round(Math.random()*30))+'  '+
-                                                          (Math.round(Math.random()*30))+'  '+
-                                                          (Math.round(Math.random()*30))+'  '">
-        <input type="button" value="清空" onclick="
-            document.getElementById('edit_show').value = ''">
+<div>
+    <font color="white" size="5px">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;彩票福利投注助手
+    </font>
+    <img src="test4.jpg" width="5%" align="left">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div align="left">
+        &nbsp;&nbsp;彩票号码&nbsp;&nbsp;
+        <input type="text" id="edit" minlength="15%" style="width: 150px">
+        <input type="button" value="投注" onclick="clickSend()">
+        <input type="button" value="清空" onclick="clickClean()" >
     </div>
-
-
-</form>
+</div>
 </body>
 </html>

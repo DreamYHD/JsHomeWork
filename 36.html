@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>计算1+2+3+4+...+N</h4>
+<input type="text" id="result" style="width: 400px;border: 0px">
+<script>
+    var num = prompt("输入整数N!")
+    var sum = 0
+    var array =  new Array()
+    var  str = ""
+    if (!isPositiveInteger(num)){
+        alert("请重新输入整数n")
+    }else {
+        var index = 0
+        for(; index <= num; index ++){
+            sum += index
+            array[index] = index
+
+        }
+        str = array.join("+")
+        document.getElementById("result").value = str +"="+sum
+    }
+
+    function isPositiveInteger(s){//是否为正整数
+        var re = /^[0-9]+$/ ;
+        return re.test(s)
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第十八届中国国际广告节会议注册表</title>
+</head>
+<style type="text/css">
+    body{
+        text-align: center;
+    }
+    h1{
+        font-size: 25px;
+
+        text-align: center;
+    }
+    .regist{
+        font-size: 14px;
+        align-content: center;
+        width: 1000px;
+        margin: 0 auto;
+        background: #f7f7f7;
+    }
+    .regist td{
+
+        font-size: 14px;
+        height: 30px;
+        border: 1px solid #ccc;
+        padding: 2px 3px;
+        text-align: center;
+
+    }
+    .regist .ibg{
+        height: 30px;
+        text-align: left;
+    }
+    .regist .bbg{
+        padding: 20px 0;
+        font-size: 13px;
+    }
+    .regist .select{
+        height: 30px;
+        align-content: center;
+    }
+</style>
+<body>
+<script>
+    var list = [];
+    var not_finish_text//将没有填写的文本框记录下来
+
+
+    list[0] = ("join_name")
+    list[1] = ("major_user")
+    list[2] = ("work_user")
+    list[3] = ("phone_user")
+    list[4] = ("chuanzhen_user")
+    list[5] = ("tel_user")
+    list[6] = ("address_user")
+    list[7] = ("youbian_user")
+    list[8] = ("email_user")
+    list[9] = ("guojia_select")
+    list[10] = ("shengfen_select")
+    list[11] = ("city_user")
+    list[12] = ("1500")
+    list[13] = ("1900")
+    list[14] = ("1800")
+    list[15] = ("2000")
+
+    function clickSendTable() {
+        if (ifNotNull()){
+            if(check_Email()&&checkPhone()&&checkTel()){
+                alert("提交成功")
+            }
+
+        }else {
+            alert(not_finish_text+"等问题还没有解决")
+        }
+    }
+
+    function ifNotNull(){
+        var i;
+        var is_finish = true
+        for(i= 0; i<list.length;i++){
+            var value = document.getElementById(list[i])
+                switch (value.type){
+                    case "text":
+                        if(isNullText(list[i])){
+                            not_finish_text += value.name+" "
+                        }
+                        break
+                    case "radio":
+                        break
+                    default:
+                        break
+            }
+        }
+        return is_finish
+    }
+    function isNullText(id) {
+        var edit = document.getElementById(id)
+        return edit.value === "";
+    }
+    function isSelect(id) {
+        var select = document.getElementById(id)
+        return select.checked = true;
+    }
+    function setNotSelect(id) {
+        var select  = document.getElementById(id)
+
+    }
+    //检测手机号
+    function checkPhone(){
+        var phone = document.getElementById("phone_user").value;
+        if(!(/^1(3|4|5|7|8)\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+            return false;
+        }
+        return true
+    }
+    //检测电话
+    function checkTel(){
+        var tel = document.getElementById('tel_user').value;
+        if(!/^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}$/.test(tel)){
+            alert('固定电话有误，请重填');
+            return false;
+        }
+        return true
+    }
+    //检测邮箱
+    function check_Email(){
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
+        var obj = document.getElementById("email_user"); //要验证的对象
+        if(obj.value === ""){ //输入不能为空
+            alert("输入不能为空!");
+            return false;
+        }else if(!reg.test(obj.value)){ //正则验证不通过，格式不对
+            alert("验证不通过!");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+</script>
+     <h1 align="center">
+          第十八届中国国际广告节会议注册表
+     </h1>
+     <form>
+         <table class="regist">
+             <tr>
+                 <td >参会者姓名</td>
+                 <td colspan="5" class="ibg"><input type="text" id="join_name" name="参会者姓名"></td>
+                 <td >职位</td>
+                 <td colspan="3" class="ibg"><input type="text" id="major_user" name="职位"></td>
+             </tr>
+             <tr>
+                 <td >工作单位</td>
+                 <td colspan="8" class="ibg"><input type="text" style="width: 500px" id="work_user" name="工作单位"></td>
+             </tr>
+             <tr>
+                 <td>电话</td>
+                 <td colspan="2" class="ibg"><input type="text" style="width: 200px" id="phone_user" name="电话"></td>
+                 <td >传真</td>
+                 <td colspan="2" class="ibg"><input type="text" style="width: 200px" id="chuanzhen_user" name="传真"></td>
+                 <td >手机</td>
+                 <td colspan="2" class="ibg"><input type="text" style="width: 200px" id="tel_user" name="手机"></td>
+             </tr>
+             <tr>
+                 <td width="100">通讯地址</td>
+                 <td colspan="5" class="ibg"><input type="text" style="width: 500px" id="address_user"></td>
+                 <td >邮编</td>
+                 <td colspan="3" class="ibg"><input type="text" id="youbian_user"></td>
+             </tr>
+             <tr>
+                 <td width="100">E-mail</td>
+                 <td colspan="5" class="ibg"><input type="text" style="width: 200px;" id="email_user" name="国家"></td>
+                 <td >国家</td>
+                 <td colspan="3" class="ibg">
+                     <select style="width: 100px" id="guojia_select">
+                         <option value="">请选择</option>
+                         <option value="">中国</option>
+                         <option value="">美国</option>
+                         <option value="">英国</option>
+                         <option value="">法国</option>
+                         <option value="">俄罗斯</option>
+                         <option value="">日本</option>
+                     </select>
+                 </td>
+             </tr>
+             <tr>
+                 <td width="100">省份</td>
+                 <td colspan="5" class="ibg">
+                     <select style="width: 100px" id="shengfen_select" name="省份">
+                         <option value="">请选择</option>
+                         <option value= 0 >北京</option>
+                         <option value= 1 >上海</option>
+                         <option value= 2 >天津</option>
+                         <option value= 3 >重庆</option>
+                         <option value= 4 >河北</option>
+                         <option value= 5 >山西</option>
+                         <option value= 6 >内蒙古</option>
+                         <option value= 7 >辽宁</option>
+                         <option value= 8 >吉林</option>
+                         <option value= 9 >黑龙江</option>
+                         <option value= 10 >江苏</option>
+                         <option value= 11 >浙江</option>
+                         <option value= 12 >安徽</option>
+                         <option value= 13 >福建</option>
+                         <option value= 14 >江西</option>
+                         <option value= 15 >山东</option>
+                         <option value= 16 >河南</option>
+                         <option value= 17 >湖北</option>
+                         <option value= 18 >湖南</option>
+                         <option value= 19 >广东</option>
+                         <option value= 20 >广西</option>
+                         <option value= 21 >海南</option>
+                         <option value= 22 >四川</option>
+                         <option value= 23 >贵州</option>
+                         <option value= 24 >云南</option>
+                         <option value= 25 >西藏</option>
+                         <option value= 26 >陕西</option>
+                         <option value= 27 >甘肃</option>
+                         <option value= 28 >宁夏</option>
+                         <option value= 29 >青海</option>
+                         <option value= 30 >新疆</option>
+                         <option value= 31 >香港</option>
+                         <option value= 32 >澳门</option>
+                         <option value= 33 >台湾</option>
+
+                     </select>
+                 </td>
+                 <td >城市</td>
+                 <td colspan="3" class="ibg"><input type="text" id="city_user" name="城市"></td>
+             </tr>
+             <tr>
+                 <td class="bbg" colspan="9">会议费标准（人民币）</td>
+             </tr>
+             <tr>
+                 <td colspan="3">身份/时间</td>
+                 <td colspan="3">2011年9月20日之前注册</td>
+                 <td colspan="3">2011年9月20日之后注册</td>
+             </tr>
+             <tr>
+                 <td colspan="3">中厂协会员</td>
+                 <td colspan="3" class="select"><input type="radio"  checked="checked" name="中厂协会员" id="1500" value="1500元">1500元</td>
+                 <td colspan="3" class="select"><input type="radio" id="1900" value="1900元"> 1900元</td>
+             </tr>
+             <tr>
+                 <td colspan="3">非会员</td>
+                 <td colspan="3" class="select"><input type="radio" value="1800元" checked="checked" id="1800">1800元</td>
+                 <td colspan="3" class="select"><input type="radio" id="2000" value="2000元">2000元</td>
+             </tr>
+             <tr>
+                 <td colspan="9" class="bbg"><input type="button" value="提交" onclick="clickSendTable()" style="width: 100px"><a href="">&nbsp;&nbsp;第十八届中国国际广告节注册下载</a></td>
+             </tr>
+         </table>
+     </form>
+</body>
+</html>

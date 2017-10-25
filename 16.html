@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+     div{
+         border: 1px solid #5358d6;
+         padding: 10px;
+         line-height: 30px;
+     }
+
+
+</style>
+<body style="width: 25%;">
+
+<script>
+    function commit() {
+        var user_name = document.getElementById("user_name")
+            .value
+        var user_pass = document.getElementById("user_pass")
+            .value
+        var  user_pass_confli = document.getElementById("user_conf_pass")
+            .value
+        var user_email = document.getElementById("user_email")
+            .value
+        if ( ""!== user_name && "" !== user_pass && ""!== user_email && ""!== user_pass_confli ){
+            if (user_name.length > 20){
+                if (user_pass_confli !== user_pass){
+                    alert("两次密码不相同")
+                }else {
+                    alert("提交成功")
+                }
+
+            }else {
+                alert("用户名的长度需要大于20")
+            }
+        }else {
+            alert("请先完成表单")
+        }
+        
+    }
+    function reset() {
+        document.getElementById("user_name").value = ""
+        document.getElementById("user_pass").value = ""
+        document.getElementById("user_conf_pass").value = ""
+        document.getElementById("user_email").value = ""
+
+
+    }
+
+</script>
+    <h3 align="center">表单验证</h3>
+    <div align="center">
+        <font style="color: #6b6dd6">用&nbsp;&nbsp;户&nbsp;&nbsp;名&nbsp;&nbsp;:</font><input type="text" id="user_name"><br>
+        <font style="color: #6b6dd6">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;:&nbsp;</font><input type="password" id="user_pass"><br>
+        <font style="color: #6b6dd6">确认密码&nbsp;:&nbsp;</font><input type="password" id="user_conf_pass"><br>
+        <font style="color: #6b6dd6">电子邮件&nbsp;:&nbsp;</font><input type="text" id="user_email"><br>
+        <input type="button" value="提交" onclick="commit()">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="重置" onclick="reset()">
+    </div>
+
+</body>
+</html>

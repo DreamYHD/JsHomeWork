@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h2>计算3+6+9+...+36的和</h2>
+ 参加运算的数<input type="text" id="numbers" style="width: 200px;border: 0px"><br>
+ 3+6+9+...+36=<input type="text" id="result" style="border: 0px">
+<script>
+    var start = 3
+    var result = 0
+    var index = 0
+    var arry = new Array()
+    var numbers = ""
+    for ( ; start <= 36 ; start += 3){
+        result += start
+        arry[index++] = start
+    }
+    numbers = arry.join(" ")
+    document.getElementById("numbers").value = numbers
+    document.getElementById("result").value = result
+</script>
+</body>
+</html>

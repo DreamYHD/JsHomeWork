@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算圆的面积</title>
+</head>
+<script>
+
+    function area(radius) {
+        return 3.14*radius*radius
+    }
+    function show() {
+        document.getElementById("area").value =
+        area(document.getElementById("r").value)
+    }
+    function reset() {
+        document.getElementById("area").value = ""
+        document.getElementById("r").value = ""
+
+    }
+
+
+</script>
+<body>
+   <h2>计算圆的面积</h2>
+   圆的半径：<input type="text" id="r"><br>
+   圆的面积：<input type="text" id="area"><br>
+   <input type="button" value="计算圆的面积" onclick="show()"><input type="button" value="重置" onclick="reset()">
+</body>
+</html>

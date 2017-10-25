@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>计算n个随机2位整数的和</h1>
+<input id="num" style="border: 0px; color: black ;width: 20px" type="text" disabled='true'>个随机2位数整数&nbsp;&nbsp;<input
+        id="result" style="border: 0px; color: #000000" type="text" disabled='true'></p>
+<input id="num1" style="border: 0px; color: black ;width: 20px" type="text"
+       disabled='true'>个随机2位数整数的和为&nbsp;&nbsp;<input id="sum" style="border: 0px; color: #000000" type="text"
+                                                     disabled='true'></p>
+
+<script>
+    var num = 0
+    var sum = 0
+    num = prompt("输入数N")
+    var arr= new Array()
+    var i = 0
+    var sum = 0
+    var result = ""
+    do {
+        alert(Math.round(Math.random() * 90 + 10))
+        arr[i] = Math.round(Math.random() * 90 + 10)
+        sum += arr[i]
+        i++
+        result = arr.join(" ")
+        alert(result)
+    } while (i < num)
+    document.getElementById("num").value = num
+    document.getElementById("num1").value = num
+    document.getElementById("result").value = result
+    document.getElementById("sum").value = sum
+</script>
+
+
+</body>
+</html>

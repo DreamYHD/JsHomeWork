@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+<body>
+<script>
+    function jiancha() {
+        if (document.getElementById("user_edit").value ===""){
+            alert("用户名不能为空")
+        }
+
+    }
+    function chongzhi() {
+        document.getElementById("user_edit").value = ""
+    }
+</script>
+      <h3>表单验证</h3>
+      用户名<input type="text" id="user_edit">
+      <br>
+      <input type="button" onclick="jiancha()" value="检查">
+      <input type="button" onclick="chongzhi()" value="重置">
+</body>
+</html>
